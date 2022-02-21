@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 // the useeffect allows us to work with side-effects. Side-effect point to work outside the component,which includes: changing document title, signing up for subscription, fetching data, or setting up eventlistener, and stuffs along this line.
 const UseEffectBasics = () => {
 	const [value, setValue] = useState(0);
-
+	// useEffect takes in a callback function
 	//1. useEffect(() => {
 	//     console.log('call effect');
 	//     // document.title = `${value} New Messages`
 
-	//     // to call useEffect conditionally, i.e to render messages only when value = 0, we put the con ditional inside the useEffect cos hooks can't be placed inside conditionals
+	//     // to call useEffect conditionally, i.e to render messages only when value = 0, we put the condition inside the useEffect cos hooks can't be placed inside conditions
 	//     if (value >= 1) {
 	//         document.title = `${value} New Message`
 	//     }
