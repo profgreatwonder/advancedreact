@@ -38,6 +38,7 @@ const ReactMemo = () => {
 			<h1>Most Expensive: ${mostExpensive()}</h1>
 			<BigList products={products} addToCart={addToCart} />
 		</>
+	
 	);
 };
 
