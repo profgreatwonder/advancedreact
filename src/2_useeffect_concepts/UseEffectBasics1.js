@@ -30,7 +30,7 @@ const UseEffectBasics = () => {
 	// we can have as many useEffects as possible. e.g,
 	useEffect(() => {
 		console.log("hello world");
-	}, []); // this will only run on the initial render(which can also happen when we reload).
+	}, []); // this will only run on the initial render(which can also happen when we reload). this is so because no value is passed into the dependency array. we see it re-render everytime if we pass in a value into the dependency array
 
 	console.log("render component");
 	return (

@@ -16,11 +16,19 @@ const MultipleReturns = () => {
 	const [isError, setIsError] = useState(false);
 	const [user, setUser] = useState("default user");
 
-	useEffect(() => {
-		// setIsLoading(true);
+	// const getUsers = async () => {
+	// 	const response = await fetch(url);
+	// 	const users = await response.json();
+	// 	// console.log(users);
+	// 	setUsers(users);
+	// };
 
-		// basically, you need to fetch your response, data, and error
+	// // useEffect cannot return a promise
+	// useEffect(() => {
+	// 	getUsers();
+	// }, []);
 
+	const getUser = async () => {
 		fetch(url)
 			.then((resp) => {
 				if (resp.status >= 200 && resp.status <= 299) {
@@ -37,6 +45,30 @@ const MultipleReturns = () => {
 				setIsLoading(false);
 			})
 			.catch((error) => console.log(error));
+	};
+
+	useEffect(() => {
+		getUser();
+		// setIsLoading(true);
+
+		// basically, you need to fetch your response, data, and error
+
+		// fetch(url)
+		// 	.then((resp) => {
+		// 		if (resp.status >= 200 && resp.status <= 299) {
+		// 			return resp.json();
+		// 		} else {
+		// 			setIsLoading(false);
+		// 			setIsError(true);
+		// 			throw new Error(resp.statusText);
+		// 		}
+		// 	})
+		// 	.then((user) => {
+		// 		const { login } = user;
+		// 		setUser(login);
+		// 		setIsLoading(false);
+		// 	})
+		// 	.catch((error) => console.log(error));
 
 		// or
 
