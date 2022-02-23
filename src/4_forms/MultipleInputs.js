@@ -7,7 +7,7 @@ const MultipleInputs = () => {
 	// const [email, setEmail] = useState('');
 	// const [age, setAge] = useState('');
 
-	// 1. now, instead of setting up different useStates for the different inputs, we can now set up one state fo all the inputs
+	// 1. now, instead of setting up different useStates for the different inputs, we can now set up one state for all the inputs
 	const [person, setPerson] = useState({ firstName: "", email: "", age: "" });
 	const [people, setPeople] = useState([]);
 
@@ -25,7 +25,7 @@ const MultipleInputs = () => {
 		// now we want to set up conditions for submitting the form
 		if (person.firstName && person.email && person.age) {
 			const newPerson = { ...person, id: new Date().getTime().toString() };
-			// instead of passing in function here, we will pass in a arrays instead
+			// instead of passing in function here, we will pass in an array instead
 			setPeople([...people, newPerson]);
 
 			// we always set the form values back to an empty string(i.e. clear the form field) once the form is submitted
