@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 // in forms, we have the options of doing uncontrolled inputs, this is where useRef comes in. The most popular use is targeting the dom element essentially in a way that allows us to set up uncontrolled input (similar to how we will have it in JS).
 
+// in very basic terms, it helps you manipulate dom elements
 // preserves value(just like useState)
 // does not trigger re-render(this is where it is different from useState)
 // target DOM nodes/elements
