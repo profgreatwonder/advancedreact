@@ -1,3 +1,4 @@
+import e from "cors";
 import React, { useState } from "react";
 // In JS
 // const input = document.getElementById('myText');
@@ -17,7 +18,7 @@ import React, { useState } from "react";
 
 // 4) Finally, we want to set up the onChange event so that each and every time that we type something into the form field, we will fire that function. Within the function, we will set up the state value and return, we will see it right away in the form. Now the value in a form depends on the state value.
 
-const ControlInputs = () => {
+export const ControlInputs = () => {
 	// our state values
 	const [firstName, setFirstName] = useState("");
 	const [email, setEmail] = useState("");
@@ -96,4 +97,23 @@ const ControlInputs = () => {
 	);
 };
 
-export default ControlInputs;
+// export default ControlInputs;
+
+export const FormEg = () => {
+	const [values, setValues] = useState("");
+
+	const handleChange = (e) => {
+		e.preventDefault();
+		setValues(e.target.value);
+	};
+
+	return (
+		<div>
+			<form action="">
+				<input type="text" value={values} onChange={handleChange} />
+			</form>
+
+			<h1>{values}</h1>
+		</div>
+	);
+};
